@@ -1,34 +1,24 @@
-# rails-tutorial-for-docker
+# README
 
-## 初期化コマンド
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-```sh
-# Dockerを立ち上げ rails new を実行する
-docker compose run --rm web rails new . --force --no-deps --database=mysql
-# 実行後 Dockerをビルド
-docker compose build
-```
+Things you may want to cover:
 
-上記を実行後 database.yml を修正する
+* Ruby version
 
-```yml
-default: &default
-  adapter: mysql2
-  encoding: utf8mb4
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: <%= ENV.fetch("DATABASE_PASSWORD") %> #修正
-  host: db #修正
-  port: 3306 #修正
-```
+* System dependencies
 
-```sh
-# Dockerを立ち上げる
-docker compose up -d
-# 実行後にDBを作成する
-docker compose exec web rake db:create
-```
+* Configuration
 
-## 参考文献
+* Database creation
 
-[https://zenn.dev/peishim/articles/89bfa48396c348](Zennの記事)
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
